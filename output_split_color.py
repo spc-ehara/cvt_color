@@ -25,7 +25,7 @@ def main() -> None:
         if len(cvt_img.shape) == 2:
             split_img = [cvt_img]
         else:
-            split_img = [cvt_img[:, :, i] for i in range(len(cvt_img.shape))]
+            split_img = [cvt_img[:, :, i] for i in range(cvt_img.shape[2])]
 
         for i in range(len(split_img)):
             cv2.imwrite(v + "_" + str(i) + ".png", split_img[i])
